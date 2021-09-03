@@ -46,3 +46,7 @@ function clear() {
     localStorage.clear()
     displayRes();
 }
+
+function Remove() {
+
+}
