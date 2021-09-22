@@ -24,13 +24,13 @@ function displayRes() {
         var Result = "";
         data.map((user, index) => {
             Result +=
-                `<tr><td class='FName1'>` +
+                `<tr ${user.id}><td class='FName1'>` +
                 user.fname +
                 `</td><td class='LName1'>` +
                 user.lname +
                 `</td><td class='Email'>` +
                 user.email +
-                `</td><td id='deleteicon' ><i onclick='Remove(id)'class='fas fa-trash' /i> Delete</td></tr>`;
+                `</td><td id='deleteicon' ><i onclick='Remove(${user.id})'class='fas fa-trash' /i> Delete ${user.id}</td></tr>`;
         });
 
         var DisplayResult =
@@ -41,12 +41,16 @@ function displayRes() {
     }
 }
 
-function clear() {
-    alert("clear the table and localStorage");
-    localStorage.clear()
-    displayRes();
-}
 
-function Remove() {
+
+function Remove(id) {
+    alert(id);
+    var storedVal = JSON.parse(localStorage.getItem("userDetails"));
+    alert(storedVal);
+    var details = JSON.stringify(localStorage.getItem("userDetails"));
+    alert(details);
+    details.splice(id, 1)
+
+
 
 }
