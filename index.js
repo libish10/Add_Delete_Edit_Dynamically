@@ -1,6 +1,8 @@
 displayRes();
 
 function Validate(formval) {
+    var isEdit = formval.Unique_Id ? true : false;
+
     var idValue = Math.floor(Math.random() * 1000);
     var oldItems = JSON.parse(localStorage.getItem("userDetails")) || [];
 
@@ -12,6 +14,7 @@ function Validate(formval) {
     };
 
     oldItems.push(newItem);
+
 
     localStorage.setItem("userDetails", JSON.stringify(oldItems));
 
@@ -30,7 +33,8 @@ function displayRes() {
                 user.lname +
                 `</td><td class='Email'>` +
                 user.email +
-                `</td><td id='deleteicon' ><i onclick='Remove(${user.id})'class='fas fa-trash' /i></td><td id='editIcon'><i class="fas fa-edit"></i></td></tr>`;
+                `</td><td id='deleteicon' ><i onclick='RemoveDetail(${user.id})'class='fas fa-trash' /i></td><td id='editIcon'>
+                <i class="fas fa-edit" onclick='EditDetail(${user.id})'></i></td></tr>`;
         });
 
         var DisplayResult =
@@ -41,16 +45,31 @@ function displayRes() {
     }
 }
 
-function Remove(id) {
+function RemoveDetail(id) {
     var storedVal = JSON.parse(localStorage.getItem("userDetails"));
 
     var RemovedVal = storedVal.filter((element) => element.id == id);
+    console.log(RemovedVal)
     var RemovedRow = JSON.stringify(RemovedVal);
     console.log("Removed Value >>>>\n");
     console.log(RemovedRow);
     var UpdatedVal = storedVal.filter((element) => element.id !== id);
+    console.log(UpdatedVal)
     console.log("Updated Value >>>>\n");
     console.log(JSON.stringify(UpdatedVal));
-    localStorage.getItem("userDetails");
-    displayRes();
+    localStorage.setItem("userDetails", JSON.stringify(UpdatedVal))
+    displayRes()
+}
+
+function EditDetail(id) {
+
+    var storedVal = JSON.parse(localStorage.getItem("userDetails"));
+    var getVal = storedVal.filter((element) => element.id == id);
+    console.log(getVal);
+    document.getElementById("First_Name").value = getVal[0].fname;
+    document.getElementById("Last_Name").value = getVal[0].lname;
+    document.getElementById("Email").value = getVal[0].email;
+    document.getElementById("Unique_Id").value = id;
+    document.getElementById("submit").value = "Edit Row"
+
 }
