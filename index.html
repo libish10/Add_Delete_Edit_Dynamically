@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form from table creation</title>
+    <script src="https://kit.fontawesome.com/d33d2ea69a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form name="MyForm" onsubmit="return Validate(this)" id="MyForm" action="#" method="post">
+
+        <label for="First_Name" class="Fname">First Name</label><br>
+        <input type="text" id="First_Name" class="FName" name="First_Name"><br>
+        <small id="FirstNameError"></small>
+        <br>
+        <label for="Last_Name" class="Lname">Last Name</label><br>
+        <input type="text" id="Last_Name" class="LName" name="Last_Name"><br>
+        <small id="LastNameError"></small>
+        <br>
+        <label for="Email" class="Mail">E-Mail</label><br>
+        <input type="email" id="Email" class="EmailId" name="Email"><br>
+        <small id="EmailError"></small>
+        <br>
+        <input type="submit" name="Submit" id="submit" value="Add Row">
+    </form>
+    <div id="root"></div>
+    <script src="index.js"></script>
+</body>
+
+</html>

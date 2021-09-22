@@ -30,27 +30,27 @@ function displayRes() {
                 user.lname +
                 `</td><td class='Email'>` +
                 user.email +
-                `</td><td id='deleteicon' ><i onclick='Remove(${user.id})'class='fas fa-trash' /i> Delete ${user.id}</td></tr>`;
+                `</td><td id='deleteicon' ><i onclick='Remove(${user.id})'class='fas fa-trash' /i></td><td id='editIcon'><i class="fas fa-edit"></i></td></tr>`;
         });
 
         var DisplayResult =
-            "<table class='Table'><tr><th class='FName Heading'>First Name</th><th class='LName Heading'>Last Name</th> <th class='Email Heading'>Email</th><th class='delete'>Delete</th></tr>" +
+            "<table class='Table'><tr><th class='FName Heading'>First Name</th><th class='LName Heading'>Last Name</th> <th class='Email Heading'>Email</th><th class='delete'>Delete</th><th class='edit'>Edit</th></tr>" +
             Result +
             "</table>";
         document.getElementById("root").innerHTML = DisplayResult;
     }
 }
 
-
-
 function Remove(id) {
-    alert(id);
     var storedVal = JSON.parse(localStorage.getItem("userDetails"));
-    alert(storedVal);
-    var details = JSON.stringify(localStorage.getItem("userDetails"));
-    alert(details);
-    details.splice(id, 1)
 
-
-
+    var RemovedVal = storedVal.filter((element) => element.id == id);
+    var RemovedRow = JSON.stringify(RemovedVal);
+    console.log("Removed Value >>>>\n");
+    console.log(RemovedRow);
+    var UpdatedVal = storedVal.filter((element) => element.id !== id);
+    console.log("Updated Value >>>>\n");
+    console.log(JSON.stringify(UpdatedVal));
+    localStorage.getItem("userDetails");
+    displayRes();
 }
