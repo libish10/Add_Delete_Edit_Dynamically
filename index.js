@@ -1,20 +1,31 @@
 displayRes();
 
 function Validate(formval) {
-    var isEdit = formval.Unique_Id ? true : false;
 
+    var user_id = parseInt(formval.Unique_Id.value);
+    var isEdit = user_id ? true : false;
     var idValue = Math.floor(Math.random() * 1000);
     var oldItems = JSON.parse(localStorage.getItem("userDetails")) || [];
 
-    var newItem = {
-        fname: formval.First_Name.value,
-        lname: formval.Last_Name.value,
-        email: formval.Email.value,
-        id: idValue,
-    };
+    if (isEdit) {
+        oldItems.map((items, index) => {
+            if (items.id === user_id) {
+                oldItems[index].fname = formval.First_Name.value;
+                oldItems[index].lname = formval.Last_Name.value;
+                oldItems[index].email = formval.Email.value;
+            }
+        });
+    } else {
 
-    oldItems.push(newItem);
+        var newItem = {
+            fname: formval.First_Name.value,
+            lname: formval.Last_Name.value,
+            email: formval.Email.value,
+            id: idValue,
+        };
 
+        oldItems.push(newItem);
+    }
 
     localStorage.setItem("userDetails", JSON.stringify(oldItems));
 
@@ -25,7 +36,7 @@ function displayRes() {
     var data = JSON.parse(localStorage.getItem("userDetails")) || [];
     if (data) {
         var Result = "";
-        data.map((user, index) => {
+        data.map(user => {
             Result +=
                 `<tr ${user.id}><td class='FName1'>` +
                 user.fname +
@@ -46,30 +57,33 @@ function displayRes() {
 }
 
 function RemoveDetail(id) {
+
+
     var storedVal = JSON.parse(localStorage.getItem("userDetails"));
 
-    var RemovedVal = storedVal.filter((element) => element.id == id);
+    var RemovedVal = storedVal.filter(element => element.id == id);
     console.log(RemovedVal)
     var RemovedRow = JSON.stringify(RemovedVal);
     console.log("Removed Value >>>>\n");
     console.log(RemovedRow);
-    var UpdatedVal = storedVal.filter((element) => element.id !== id);
+    var UpdatedVal = storedVal.filter(element => element.id !== id);
     console.log(UpdatedVal)
     console.log("Updated Value >>>>\n");
     console.log(JSON.stringify(UpdatedVal));
     localStorage.setItem("userDetails", JSON.stringify(UpdatedVal))
     displayRes()
+
 }
 
 function EditDetail(id) {
 
     var storedVal = JSON.parse(localStorage.getItem("userDetails"));
-    var getVal = storedVal.filter((element) => element.id == id);
+    var getVal = storedVal.filter(element => element.id == id);
     console.log(getVal);
     document.getElementById("First_Name").value = getVal[0].fname;
     document.getElementById("Last_Name").value = getVal[0].lname;
     document.getElementById("Email").value = getVal[0].email;
-    document.getElementById("Unique_Id").value = id;
+    document.getElementById("Unique_Id").value = getVal[0].id;
     document.getElementById("submit").value = "Edit Row"
 
 }

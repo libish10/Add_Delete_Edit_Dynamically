@@ -1,144 +1,210 @@
-form {
-    margin: 50px auto;
-    height: 250px;
-    width: 700px;
-    border: 2px solid black;
-    padding: 50px 50px;
-    background-color: rgb(0, 247, 255)
-}
-
-.Fname {
-    color: rgb(3, 4, 63);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.Lname {
-    position: relative;
-    left: 400px;
-    top: -90px;
-    color: rgb(3, 4, 63);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#First_Name {
-    position: relative;
-    top: 3px;
-    font-family: sans-serif;
-    height: 15px;
-}
-
-#Last_Name {
-    position: relative;
-    left: 400px;
-    top: -90px;
-    font-family: sans-serif;
-    height: 15px;
-}
-
-input[type="text"],
-input[type="email"] {
-    height: 30px;
-    width: 300px;
-    color: black;
-    padding: 15px;
-    font-size: 15px;
-}
-
-.Mail {
-    color: rgb(3, 4, 63);
-    font-size: 20px;
-    font-weight: bold;
-    position: relative;
-    top: -30px;
-}
-
-#Email {
-    position: relative;
-    top: -30px;
-    height: 15px;
-}
-
-#submit {
-    position: relative;
-    left: 400px;
-    top: -90px;
-    background-color: rgb(3, 31, 39);
-    color: white;
-    font-size: 20px;
-    height: 40px;
-    border-radius: 10px;
-    width: 150px;
-    cursor: pointer;
-}
-
-#FirstNameError,
-#LastNameError,
-#EmailError {
-    color: red;
-}
-
-#FirstNameError {
-    position: relative;
-    top: 10px;
-}
-
-#LastNameError {
-    position: relative;
-    left: 400px;
-    top: -65px;
-}
-
-#EmailError {
-    position: relative;
-    top: -20px
-}
-
-#root {
-    margin: 0 auto;
-    width: 500px;
-    height: 250px;
-}
-
-#Table {
-    width: 1000px;
-    border: 2px solid black;
-    border-collapse: collapse;
-    text-align: center;
-}
-
-.FName1,
-.LName1,
-.LastNameDetail,
-.Email,
-#deleteicon,
-#editIcon,
-.FName.Heading,
-.delete,
-.edit,
-.Email.Heading,
-.LName.Heading {
-    margin: 10px 20px;
-    padding: 10px;
-    text-align: center;
-    border: 2px solid rgb(0, 0, 0)
-}
-
-.fa-edit {
-    color: blue;
-    cursor: pointer;
-}
-
-.fa-trash {
-    color: red;
-    cursor: pointer;
-}
-
-.FName.Heading,
-.delete,
-.edit,
-.LName.Heading,
-.Email.Heading {
-    color: rgb(14, 74, 240);
-}
+    form {
+        margin: 50px auto;
+        height: 200px;
+        max-width: 700px;
+        border: 2px solid black;
+        padding: 50px 50px;
+        background-color: rgb(0, 247, 255)
+    }
+    
+    .Fname {
+        color: rgb(3, 4, 63);
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .Lname {
+        position: relative;
+        left: 400px;
+        top: -90px;
+        color: rgb(3, 4, 63);
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    #First_Name {
+        position: relative;
+        top: 8px;
+        font-family: sans-serif;
+        height: 15px;
+    }
+    
+    #Last_Name {
+        position: relative;
+        left: 400px;
+        top: -83px;
+        font-family: sans-serif;
+        height: 15px;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+        height: 30px;
+        width: 300px;
+        color: black;
+        padding: 15px;
+        font-size: 15px;
+    }
+    
+    .Mail {
+        color: rgb(3, 4, 63);
+        font-size: 20px;
+        font-weight: bold;
+        position: relative;
+        top: -55px;
+    }
+    
+    #Email {
+        position: relative;
+        top: -45px;
+        height: 15px;
+    }
+    
+    #submit {
+        position: relative;
+        left: 400px;
+        top: -108px;
+        background-color: rgb(3, 31, 39);
+        color: white;
+        font-size: 20px;
+        height: 40px;
+        border-radius: 10px;
+        width: 150px;
+        cursor: pointer;
+    }
+    
+    #FirstNameError,
+    #LastNameError,
+    #EmailError {
+        color: red;
+    }
+    
+    #FirstNameError {
+        position: relative;
+        top: 10px;
+    }
+    
+    #LastNameError {
+        position: relative;
+        left: 400px;
+        top: -65px;
+    }
+    
+    #EmailError {
+        position: relative;
+        top: -20px
+    }
+    
+    #root {
+        margin: 0 auto;
+        width: 800px;
+        height: 250px;
+    }
+    
+    #Table {
+        width: auto;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    
+    .FName.Heading {
+        width: 160px;
+    }
+    
+    .delete {
+        width: 160px;
+    }
+    
+    .edit {
+        width: 160px;
+    }
+    
+    .Email.Heading {
+        width: 160px;
+    }
+    
+    .LName.Heading {
+        width: 160px;
+    }
+    
+    .FName1,
+    .LName1,
+    .LastNameDetail,
+    .Email,
+    #deleteicon,
+    #editIcon,
+    .FName.Heading,
+    .delete,
+    .edit,
+    .Email.Heading,
+    .LName.Heading {
+        margin: 10px 20px;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid rgb(0, 0, 0)
+    }
+    
+    .fa-edit {
+        color: green;
+        cursor: pointer;
+    }
+    
+    .fa-trash {
+        color: red;
+        cursor: pointer;
+    }
+    
+    .FName.Heading,
+    .delete,
+    .edit,
+    .LName.Heading,
+    .Email.Heading {
+        color: rgb(14, 74, 240);
+    }
+    
+    @media only screen and (max-width:800px) {
+        form {
+            background-color: rgba(5, 195, 253, 0.5);
+            height: auto;
+        }
+        #First_Name {
+            width: 100%;
+        }
+        .Lname {
+            position: relative;
+            left: -0px;
+            top: 10px;
+        }
+        #Last_Name {
+            position: relative;
+            left: -0px;
+            top: 20px;
+            width: 100%;
+        }
+        .Mail {
+            position: relative;
+            left: 0px;
+            top: 25px;
+        }
+        #Email {
+            position: relative;
+            left: 0px;
+            top: 35px;
+            width: 100%;
+        }
+        #submit {
+            position: relative;
+            left: 0;
+            top: 40px;
+            width: 108%;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        #root {
+            width: auto;
+        }
+        #Table {
+            width: auto;
+        }
+    }
