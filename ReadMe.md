@@ -26,3 +26,13 @@ if (confirm("Are you want to remove the current detail ?")) {
     if (flag) {
         return false;
     }
+
+
+
+
+    onchange="return ValidateFirstName()"     //function ValidateLastName() { //}
+     onchange="return ValidateEmail()"   function ValidateEmail() {//}
+
+     onchange="return ValidateLastName()"   
+
+    //function ValidateLastName() { //}

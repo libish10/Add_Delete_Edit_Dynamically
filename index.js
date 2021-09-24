@@ -57,10 +57,7 @@ function displayRes() {
 }
 
 function RemoveDetail(id) {
-
-
     var storedVal = JSON.parse(localStorage.getItem("userDetails"));
-
     var RemovedVal = storedVal.filter(element => element.id == id);
     console.log(RemovedVal)
     var RemovedRow = JSON.stringify(RemovedVal);

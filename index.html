@@ -11,25 +11,27 @@
 </head>
 
 <body>
-    <form name="MyForm" onsubmit="return Display(this)" id="MyForm" action="#" method="post">
+    <div id=overLay>
+        <form name="MyForm" onsubmit="return Display(this)" id="MyForm" action="#" method="post">
 
-        <label for="First_Name" class="Fname">First Name</label><br>
-        <input type="text" id="First_Name" class="FName" name="First_Name" onchange="return ValidateFirstName()"><br>
-        <small id="FirstNameError"></small>
-        <br>
-        <label for="Last_Name" class="Lname">Last Name</label><br>
-        <input type="text" id="Last_Name" class="LName" name="Last_Name" onchange="return ValidateLastName()"><br>
-        <small id="LastNameError"></small>
-        <br>
-        <label for="Email" class="Mail">E-Mail</label><br>
-        <input type="email" id="Email" class="EmailId" name="Email" onchange="return ValidateEmail()"><br>
-        <small id="EmailError"></small>
-        <br>
-        <input type="hidden" id="Unique_Id">
-        <input type="submit" name="Submit" id="submit" value="Add Row">
-    </form>
-
+            <label for="First_Name" class="Fname">First Name</label><br>
+            <input type="text" id="First_Name" class="FName" name="First_Name" required onchange="return ValidateFirstName()"><br>
+            <small id="FirstNameError"></small>
+            <br>
+            <label for="Last_Name" class="Lname">Last Name</label><br>
+            <input type="text" id="Last_Name" class="LName" name="Last_Name" required onchange="return ValidateLastName()"><br>
+            <small id="LastNameError"></small>
+            <br>
+            <label for="Email" class="Mail">E-Mail</label><br>
+            <input type="email" id="Email" class="EmailId" name="Email" onchange="return ValidateEmail()" required><br>
+            <small id="EmailError"></small>
+            <br>
+            <input type="hidden" id="Unique_Id">
+            <input type="submit" name="Submit" id="submit" value="Add Row" onclick="return validate()">
+        </form>
+    </div>
     <div id="root"></div>
+    <script src="./OnChangeValidation.js"></script>
     <script src="./validation.js"></script>
     <script src="index.js"></script>
 </body>
