@@ -1,6 +1,6 @@
 displayRes();
 
-function Validate(formval) {
+function Display(formval) {
 
     var user_id = parseInt(formval.Unique_Id.value);
     var isEdit = user_id ? true : false;

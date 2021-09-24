@@ -87,12 +87,12 @@
     #LastNameError {
         position: relative;
         left: 400px;
-        top: -65px;
+        top: -80px;
     }
     
     #EmailError {
         position: relative;
-        top: -20px
+        top: -45px
     }
     
     #root {
@@ -174,23 +174,23 @@
         .Lname {
             position: relative;
             left: -0px;
-            top: 10px;
+            top: 20px;
         }
         #Last_Name {
             position: relative;
             left: -0px;
-            top: 20px;
+            top: 25px;
             width: 100%;
         }
         .Mail {
             position: relative;
             left: 0px;
-            top: 25px;
+            top: 30px;
         }
         #Email {
             position: relative;
             left: 0px;
-            top: 35px;
+            top: 40px;
             width: 100%;
         }
         #submit {
@@ -206,5 +206,14 @@
         }
         #Table {
             width: auto;
+        }
+        #LastNameError {
+            position: relative;
+            top: 25px;
+            left: -0px;
+        }
+        #EmailError {
+            position: relative;
+            top: 37px
         }
     }
